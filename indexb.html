@@ -79,24 +79,6 @@
         },
       }
     </script>
-<script>
-      (function () {
-        try {
-          var visitKey = "soma_ab_visit_count";
-          var currentCount = Number(localStorage.getItem(visitKey) || "0") + 1;
-          localStorage.setItem(visitKey, String(currentCount));
-
-          var shouldServeB = currentCount % 2 === 0;
-          var isCurrentB = /\/indexb\.html$/i.test(window.location.pathname);
-
-          if (shouldServeB !== isCurrentB) {
-            window.location.replace(shouldServeB ? "indexb.html" : "index.html");
-          }
-        } catch (error) {
-          // Fallback: If storage is blocked, keep the current page.
-        }
-      })();
-    </script>
 <style>
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
@@ -582,7 +564,7 @@
 </div>
 <div class="max-w-md mx-auto">
 <form action="https://formspree.io/f/xgorowpo" class="flex flex-col md:flex-row gap-3 p-1.5 rounded-full border border-surface-container-high focus-within:ring-2 focus-within:ring-primary/20 transition-all bg-white" method="POST">
-<input name="landing_variant" type="hidden" value="b_new"/>
+<input name="landing_variant" type="hidden" value="a_new"/>
 <input class="flex-1 bg-transparent border-none rounded-full px-6 py-4 text-on-surface placeholder-outline focus:ring-0 text-sm" name="email" placeholder="Enter your email" required="" type="email"/>
 <button class="bg-primary hover:bg-primary-container text-on-primary font-bold py-4 px-8 rounded-full transition-all shadow-lg shadow-primary/10 text-sm" type="submit">
                     Join waitlist

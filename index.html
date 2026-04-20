@@ -86,14 +86,14 @@
           var currentCount = Number(localStorage.getItem(visitKey) || "0") + 1;
           localStorage.setItem(visitKey, String(currentCount));
 
-          var shouldServeB = currentCount % 2 === 0;
-          var isCurrentB = /\/indexb\.html$/i.test(window.location.pathname);
+          var isBVisit = currentCount % 2 === 0;
+          var isIndexB = /\/indexb\.html$/i.test(window.location.pathname);
 
-          if (shouldServeB !== isCurrentB) {
-            window.location.replace(shouldServeB ? "indexb.html" : "index.html");
+          if (isBVisit && !isIndexB) {
+            window.location.replace("indexb.html");
           }
         } catch (error) {
-          // Fallback: If storage is blocked, keep the current page.
+          // Fallback: If storage is blocked, keep default variant (index.html).
         }
       })();
     </script>
