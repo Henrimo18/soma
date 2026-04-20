@@ -79,24 +79,6 @@
         },
       }
     </script>
-<script>
-      (function () {
-        try {
-          var visitKey = "soma_ab_visit_count";
-          var currentCount = Number(localStorage.getItem(visitKey) || "0") + 1;
-          localStorage.setItem(visitKey, String(currentCount));
-
-          var shouldServeB = currentCount % 2 === 0;
-          var isCurrentB = /\/indexb\.html$/i.test(window.location.pathname);
-
-          if (shouldServeB !== isCurrentB) {
-            window.location.replace(shouldServeB ? "indexb.html" : "index.html");
-          }
-        } catch (error) {
-          // Fallback: If storage is blocked, keep the current page.
-        }
-      })();
-    </script>
 <style>
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
